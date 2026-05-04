@@ -65,6 +65,18 @@ export function ToDoProvider({ children }: Props) {
         setTodos(prev => prev.filter(todo => !todo.completed))
     };
 
-    
+    return (
+        <ToDoContext.Provider
+            value={{
+                todos,
+                addToDo,
+                toggleToDo,
+                deleteToDo,
+                editToDo,clearCompleted
+            }}
+            >
+                {children}
+            </ToDoContext.Provider>
+    )
 
 }
