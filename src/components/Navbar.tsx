@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
+import { ThemeButton } from "./Filter/ThemeButton";
 
 export function Navbar() {
     const { theme, toggleTheme } = useContext(ThemeContext);
@@ -21,9 +22,7 @@ export function Navbar() {
 
     return (
         <div style={styles}>
-            <button style={buttonStyles} onClick={toggleTheme}>
-                Switch to {theme === "light" ? "Dark" : "Light"} Mode
-            </button>
+            <ThemeButton />
         </div>
     )
 
