@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 type ToDo = {  
     id: string | number;
@@ -25,3 +25,27 @@ export const ToDoContext = createContext<ToDoContextType>({
     editToDo: () => {},
     clearCompleted: () => {}
 });
+
+type Props = {
+    children: React.ReactNode;
+}
+
+export function ToDoProvider({ children }: Props) {
+    
+    const [todos, setTodos] = useState<ToDo[]>([]);
+
+    const addToDo = (text: string) => {
+        const newTodo: ToDo = {
+            id: Date.now(),
+            text,
+            completed: false
+        }; 
+        setTodos(prev => [...prev, newTodo]);
+    };
+
+    const toggleToDo = (id: string | number) => {
+        setTodos(prev =>
+            prev.map(todo => todo.id === id ? {...todo, completed: !todo.completed } : todo)
+        )
+    }
+}
