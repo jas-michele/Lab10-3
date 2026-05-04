@@ -9,3 +9,64 @@
     color: white;
     min-height: 100vh;
 }
+
+/* Layout */
+.container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* Theme */
+.light {
+  background: white;
+  color: black;
+  min-height: 100vh;
+}
+
+.dark {
+  background: #121212;
+  color: white;
+  min-height: 100vh;
+}
+
+/* Input */
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Buttons */
+button {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Todo items */
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  background: #f4f4f4;
+}
+
+.dark .todo-item {
+  background: #1e1e1e;
+}
+
+/* Completed */
+.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}

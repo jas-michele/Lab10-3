@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      <div className={theme}>
+      <div className={`container ${theme}`}>
         <h1>Todo App</h1>
         <Navbar />
 

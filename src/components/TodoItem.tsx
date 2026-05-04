@@ -21,7 +21,7 @@ export function TodoItem({ todo }: Props){
     }
 
     return (
-        <div>
+        <div className="todo-item">
             <span
                 onClick={() => toggleToDo(todo.id)}
                 style={{
