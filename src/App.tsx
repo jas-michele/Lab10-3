@@ -1,5 +1,6 @@
 import { TodoInput } from './components/TodoInput'
 import { TodoList } from './components/Todolist'
+import { FilterButtons } from './components/Filter/FilterButton'
 import './App.css'
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <>
     <div>
       <h1>Todo App</h1>
+      <FilterButtons />
       <TodoInput />
       <TodoList />
     </div>
