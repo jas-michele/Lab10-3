@@ -4,7 +4,8 @@ import { TodoItem } from "./TodoItem"
 
 export function TodoList() {
     const { todos } = useContext(ToDoContext);
-
+     
+    console.log(todos);
     return (
         <div>
             {todos.map(todo => (
