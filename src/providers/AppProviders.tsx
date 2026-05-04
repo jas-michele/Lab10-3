@@ -1,9 +1,11 @@
 import { ToDoProvider } from "../context/TodoContext";
 
-export function AppProviders({ children}) {
+export function AppProviders({ children }) {
     return (
         <ToDoProvider>
-            {children}
+            <AppProviders>
+                {children}
+            </AppProviders>
         </ToDoProvider>
     )
 }
