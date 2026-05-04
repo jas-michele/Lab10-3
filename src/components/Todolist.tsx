@@ -4,7 +4,7 @@ import { FilterContext } from "../context/FilterContext";
 import { TodoItem } from "./TodoItem"
 
 export function TodoList() {
-    const { todos } = useContext(ToDoContext);
+    const { todos, clearCompleted } = useContext(ToDoContext);
     const { filter } = useContext(FilterContext);
 
     const filteredTodos = todos.filter(todo => {
@@ -19,6 +19,10 @@ export function TodoList() {
             {filteredTodos.map(todo => (
                 <TodoItem key={todo.id} todo={todo} />
             ))}
+
+            <button onClick={clearCompleted}>
+                Clear Completed
+            </button>
         </div>
     )
 
