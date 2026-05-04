@@ -48,4 +48,23 @@ export function ToDoProvider({ children }: Props) {
             prev.map(todo => todo.id === id ? {...todo, completed: !todo.completed } : todo)
         )
     }
+
+    const deleteToDo = (id: string | number) => {
+        setTodos(prev => prev.filter(todo => todo.id !== id))
+    }
+
+    const editToDo = (id: string | number, newText: string) => {
+        setTodos(prev => 
+            prev.map(todo => todo.id === id ? {...todo, text: newText}
+                : todo
+            )
+        )
+    }
+
+    const clearCompleted = () => {
+        setTodos(prev => prev.filter(todo => !todo.completed))
+    };
+
+    
+
 }
