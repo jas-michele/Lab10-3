@@ -10,7 +10,15 @@ type Props = {
 }
 
 export function TodoItem({ todo }: Props){
-    const { toggleToDo, deleteToDo } = useContext(ToDoContext);
+    const { toggleToDo, deleteToDo, editToDo} = useContext(ToDoContext);
+
+    const handleEdit = () => {
+        const newText = prompt("Edit todo:", todo.text)
+
+        if (newText) {
+            editToDo(todo.id, newText)
+        }
+    }
 
     return (
         <div>
@@ -23,7 +31,7 @@ export function TodoItem({ todo }: Props){
                 >
                     {todo.text}
                 </span>
-
+                <button onClick={handleEdit}>Edit</button>
                 <button onClick={() => deleteToDo(todo.id)}>
                     Delete
                 </button>

@@ -72,7 +72,8 @@ export function ToDoProvider({ children }: Props) {
                 addToDo,
                 toggleToDo,
                 deleteToDo,
-                editToDo,clearCompleted
+                editToDo,
+                clearCompleted
             }}
             >
                 {children}
